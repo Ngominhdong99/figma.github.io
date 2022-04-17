@@ -1,0 +1,49 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "userName": "Ngô Minh Đông",
+        "gender": "male",
+        "date": "20/04/1999",
+        "phoneNumber": "0339065951",
+        "email": "Minhdong20499@gmail.com",
+        "address": "Thai Binh"
+      },
+      {
+        "id": 2,
+        "userName": "Ngô Minh Đức",
+        "gender": "male",
+        "date": "20/04/1999",
+        "phoneNumber": "0339065951",
+        "email": "Minhduc2891@gmail.com",
+        "address": "Thai Binh"
+      },
+      {
+        "id": 3,
+        "userName": "Nguyễn Thị Vinh",
+        "gender": "female",
+        "date": "20/04/1999",
+        "phoneNumber": "0339065951",
+        "email": "Vinhnt@vmogroup.com",
+        "address": "Thai Binh"
+      },
+      {
+        "id": 6,
+        "userName": "Nguyễn Huyền Trang",
+        "gender": "female",
+        "date": "1999-09-17",
+        "phoneNumber": "0972834989",
+        "email": "Trangmulder17@gmail.com",
+        "address": "Thai Binh"
+      },
+      {
+        "id": 7,
+        "userName": "Đặng Mạnh Tường",
+        "gender": "male",
+        "date": "1993-12-19",
+        "phoneNumber": "0123456789",
+        "email": "tuongdm@vmodev.com",
+        "address": "Thai Binh"
+      }
+    ]
+  }

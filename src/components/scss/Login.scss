@@ -1,0 +1,132 @@
+.login-form {
+  position: relative;
+  width: 1272px;
+  height: 647px;
+  background: #ffffff;
+
+  h1 {
+    position: absolute;
+    left: 12.58%;
+    right: 70.44%;
+    top: 21.17%;
+    bottom: 72.64%;
+
+    font-family: "Graphik";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 40px;
+
+    color: #015db2;
+  }
+
+  .login {
+    width: 627.79px;
+
+    .userName {
+      position: absolute;
+      left: 7.7%;
+      right: 65.57%;
+      top: 35.09%;
+      bottom: 57.19%;
+      border: 1px solid #015db2;
+      box-sizing: border-box;
+      border-radius: 10px;
+      border: 1px solid #015db2;
+
+      font-family: "Graphik";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 18px;
+      color: #bab6b6;
+      padding: 20px;
+    }
+
+    .error-noti {
+      position: absolute;
+      left: 8%;
+      right: 65.57%;
+      top: 31%;
+      bottom: 57.19%;
+      color: rgb(255, 0, 0);
+    }
+
+    .error-name {
+      position: absolute;
+      left: 8%;
+      right: 65.57%;
+      top: 43.09%;
+      bottom: 57.19%;
+      color: rgb(255, 0, 0);
+    }
+
+    .password {
+      position: absolute;
+      left: 7.7%;
+      right: 65.57%;
+      top: 50.54%;
+      bottom: 41.73%;
+      border: 1px solid #015db2;
+      box-sizing: border-box;
+      border-radius: 10px;
+
+      font-family: "Graphik";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 18px;
+      letter-spacing: -0.02em;
+      color: #bab6b6;
+      padding: 20px;
+    }
+
+    .error-password {
+      position: absolute;
+      left: 8%;
+      right: 65.57%;
+      top: 58.8%;
+      bottom: 41.73%;
+      color: red;
+    }
+
+    .hide-password {
+      position: absolute;
+      left: 30.97%;
+      right: 67.14%;
+      top: 52.55%;
+      bottom: 43.74%;
+      color: #015db2;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    button {
+      position: absolute;
+      width: 200px;
+      height: 50px;
+      left: 168px;
+      top: 427px;
+      background: #015db2;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+
+      font-family: "Graphik";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 26px;
+
+      color: #fcfdfe;
+    }
+  }
+
+  img {
+    position: absolute;
+    left: 49.35%;
+    right: 0.06%;
+    top: 0%;
+    bottom: 0%;
+  }
+}

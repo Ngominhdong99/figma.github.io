@@ -1,0 +1,48 @@
+import profile from "../images/Anh the.png";
+
+export const data = [
+  {
+    id: 1,
+    userName: "admin",
+    password: "admin",
+    fullName: "Ngô Minh Đông",
+    role: "Admin",
+    gender: "Male",
+    age: 24,
+    position: "Front-end dev",
+    img: profile,
+  },
+  {
+    id: 2,
+    userName: "hungdnv",
+    password: "Md01100100",
+    fullName: "Đinh Nguyễn Việt Hưng",
+    role: "Member",
+    gender: "Male",
+    age: 23,
+    position: "Front-end dev",
+    img: "profile",
+  },
+  {
+    id: 3,
+    userName: "chaunv",
+    password: "Md01100100",
+    fullName: "Nguyễn Văn Châu",
+    role: "Member",
+    gender: "Male",
+    age: 26,
+    position: "Front-end dev",
+    img: "profile",
+  },
+  {
+    id: 4,
+    userName: "huynq",
+    password: "Md01100100",
+    fullName: "Ngô Quang Huy",
+    role: "Member",
+    gender: "Male",
+    age: 25,
+    position: "Front-end dev",
+    img: "profile",
+  },
+];

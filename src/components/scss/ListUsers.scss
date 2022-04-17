@@ -1,0 +1,109 @@
+.list-user-section {
+  //   width: 1063px;
+
+  width: 963px;
+  height: 485px;
+  left: 327px;
+  top: 520px;
+  margin: 50px 50px 0 32.5%;
+  background: #fcfdfe;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+
+  & p {
+    position: absolute;
+    width: 96px;
+    height: 26px;
+    left: 370px;
+    top: 550px;
+    font-family: "Graphik";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 26px;
+    color: #015db2;
+  }
+
+  .table {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 877px;
+    height: 288px;
+    left: 370px;
+    top: 606px;
+    border-spacing: 0px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border-collapse: collapse;
+    text-align: center;
+
+    #user tr td {
+      height: 48px;
+      width: 877px;
+      border: 1px solid #015db2;
+    }
+
+    .tr th {
+      height: 48px;
+      width: 877px;
+      border: 1px solid #015db2;
+    }
+  }
+
+  .delete {
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    left: 860px;
+    top: 924px;
+    border: 1px solid #015db2;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-family: "Graphik";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 22px;
+    color: #015db2;
+    cursor: pointer;
+  }
+
+  .edit {
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    left: 994px;
+    top: 924px;
+    border: 1px solid #015db2;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-family: "Graphik";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 22px;
+    color: #015db2;
+    cursor: pointer;
+  }
+
+  .add {
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    left: 1127px;
+    top: 924px;
+    background: #015db2;
+    border-radius: 5px;
+    border: none;
+    font-family: "Graphik";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 22px;
+    color: #fcfdfe;
+    cursor: pointer;
+  }
+}
