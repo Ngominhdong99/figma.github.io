@@ -6,8 +6,7 @@ import { BiCategory } from "react-icons/bi";
 import { HiOutlineDocumentText } from "react-icons/hi";
 import UserList from "./UserList";
 
-function Home({ currentUser }) {
-  const [isHide, setIsHide] = React.useState();
+function Home({ currentUser, isHide, setIsHide }) {
   const navigate = useNavigate();
   return (
     <div className="container">
@@ -89,7 +88,7 @@ function Home({ currentUser }) {
             <button className="search">Search</button>
           </div>
         </div>
-        {!isHide ? <UserList /> : null}
+        {!isHide ? <UserList setIsHide={setIsHide} /> : null}
       </div>
     </div>
   );

@@ -5,10 +5,24 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-function UserList() {
+function UserList({ setIsHide }) {
+  const [pickedUser, setPickedUser] = React.useState();
   const dispatch = useDispatch();
   const state = useSelector((state) => state.form);
-
+  const navigate = useNavigate();
+  const handleAdd = () => {
+    navigate(`/home/form`);
+    setIsHide(true);
+  };
+  const handleEdit = () => {
+    dispatch(setUser(pickedUser));
+    navigate(`/home/form`);
+    setIsHide(true);
+  };
+  const handleDelete = () => {
+    dispatch(deleteUser(pickedUser.id));
+    dispatch(getUsers());
+  };
   useEffect(() => {
     dispatch(getUsers());
   }, [dispatch]);
@@ -16,7 +30,7 @@ function UserList() {
   return (
     <div className="list-user-section">
       <p>Users</p>
-      <table className="table table-bordered">
+      <table className="table">
         <thead>
           <tr className="tr">
             <th scope="col"></th>
@@ -32,7 +46,11 @@ function UserList() {
           {state.users.map((user, index) => (
             <tr key={index}>
               <td>
-                <input type="radio" name="user" />
+                <input
+                  type="radio"
+                  name="user"
+                  onChange={() => setPickedUser(user)}
+                />
               </td>
               <td>{user.userName}</td>
               <td>{user.gender}</td>
@@ -44,9 +62,15 @@ function UserList() {
           ))}
         </tbody>
       </table>
-      <button className="delete">Delete</button>
-      <button className="edit">Edit</button>
-      <button className="add">Add</button>
+      <button className="delete" onClick={() => handleDelete()}>
+        Delete
+      </button>
+      <button className="edit" onClick={() => handleEdit()}>
+        Edit
+      </button>
+      <button className="add" onClick={() => handleAdd()}>
+        Add
+      </button>
     </div>
   );
 }

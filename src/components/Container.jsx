@@ -12,6 +12,8 @@ import Form from "./nav-components/Form";
 function Container() {
   const [error, setError] = React.useState([]);
   const [currentUser, setCurrentUser] = React.useState([]);
+  const [isHide, setIsHide] = React.useState();
+
   const state = useSelector((state) => state.form);
 
   let navigate = useNavigate();
@@ -33,7 +35,12 @@ function Container() {
         <Route
           path="home"
           element={
-            <Home currentUser={currentUser} setCurrentUser={setCurrentUser} />
+            <Home
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
+              isHide={isHide}
+              setIsHide={setIsHide}
+            />
           }
         >
           <Route path="about" element={<About setError={setError} />} />
@@ -41,7 +48,10 @@ function Container() {
             path="profile"
             element={<Profile currentUser={currentUser} />}
           />
-          <Route path="form" element={<Form />} />
+          <Route
+            path="form"
+            element={<Form state={state} setIsHide={setIsHide} />}
+          />
         </Route>
         <Route
           path="/"

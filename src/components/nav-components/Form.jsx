@@ -1,11 +1,58 @@
 import React from "react";
 import "../scss/AddUser.scss";
+import {
+  setUser,
+  addUser,
+  updateUser,
+  getUsers,
+} from "../../store/actions/action";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-function Form() {
+function Form({ state, setIsHide }) {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { user, users } = state;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(addUser(user));
+    dispatch(getUsers());
+    setIsHide(true);
+    dispatch(
+      setUser({
+        id: null,
+        userName: "",
+        gender: "male",
+        date: "",
+        phoneNumber: "",
+        email: "",
+        address: "",
+      })
+    );
+  };
+  const handleSubmitEdit = (e) => {
+    e.preventDefault();
+
+    dispatch(updateUser(user));
+    dispatch(getUsers());
+
+    dispatch(
+      setUser({
+        id: null,
+        userName: "",
+        gender: "male",
+        date: "",
+        phoneNumber: "",
+        email: "",
+        address: "",
+      })
+    );
+  };
   return (
     <>
       <div className="form-container">
-        <form className="form" id="form-1">
+        <form className="form" id="form-1" onSubmit={handleSubmit}>
           <h3 className="heading">Add user</h3>
           <div className="spacer"></div>
           <div className="form-group">
@@ -18,16 +65,16 @@ function Form() {
               name="fullname"
               type="text"
               placeholder="Ex: Chris Ngo"
-              //   value={user.userName}
-              //   onChange={(e) => {
-              //     dispatch(
-              //       setUser({
-              //         ...user,
-              //         userName: e.target.value,
-              //       })
-              //     );
-              //     error.userName = null;
-              //   }}
+              value={user.userName}
+              onChange={(e) => {
+                dispatch(
+                  setUser({
+                    ...user,
+                    userName: e.target.value,
+                  })
+                );
+                // error.userName = null;
+              }}
             />
             <span className="form-message"></span>
           </div>
@@ -43,8 +90,8 @@ function Form() {
               name="gender"
               type="radio"
               value="male"
-              //   onChange={() => dispatch(setUser({ ...user, gender: "male" }))}
-              //   checked={user.gender === "male"}
+              onChange={() => dispatch(setUser({ ...user, gender: "male" }))}
+              checked={user.gender === "male"}
             />
             <label htmlFor="female" className="form-label genderF">
               Female
@@ -55,8 +102,8 @@ function Form() {
               name="gender"
               type="radio"
               value="female"
-              //   onChange={() => dispatch(setUser({ ...user, gender: "female" }))}
-              //   checked={user.gender === "female"}
+              onChange={() => dispatch(setUser({ ...user, gender: "female" }))}
+              checked={user.gender === "female"}
             />
           </div>
 
@@ -70,16 +117,16 @@ function Form() {
               name="email"
               type="text"
               placeholder="VD: email@domain.com"
-              //   value={user.email}
-              //   onChange={(e) => {
-              //     dispatch(
-              //       setUser({
-              //         ...user,
-              //         email: e.target.value,
-              //       })
-              //     );
-              //     error.email = null;
-              //   }}
+              value={user.email}
+              onChange={(e) => {
+                dispatch(
+                  setUser({
+                    ...user,
+                    email: e.target.value,
+                  })
+                );
+                // error.email = null;
+              }}
             />
             <span className="form-message"></span>
           </div>
@@ -94,16 +141,16 @@ function Form() {
               name="phone-number"
               type="phone-number"
               placeholder="+84"
-              //   value={user.phoneNumber}
-              //   onChange={(e) => {
-              //     dispatch(
-              //       setUser({
-              //         ...user,
-              //         phoneNumber: e.target.value,
-              //       })
-              //     );
-              //     error.phoneNumber = null;
-              //   }}
+              value={user.phoneNumber}
+              onChange={(e) => {
+                dispatch(
+                  setUser({
+                    ...user,
+                    phoneNumber: e.target.value,
+                  })
+                );
+                // error.phoneNumber = null;
+              }}
             />
             <span className="form-message"></span>
           </div>
@@ -117,16 +164,16 @@ function Form() {
               name="date"
               type="date"
               className="form-control"
-              //   value={user.date}
-              //   onChange={(e) => {
-              //     dispatch(
-              //       setUser({
-              //         ...user,
-              //         date: e.target.value,
-              //       })
-              //     );
-              //     error.date = null;
-              //   }}
+              value={user.date}
+              onChange={(e) => {
+                dispatch(
+                  setUser({
+                    ...user,
+                    date: e.target.value,
+                  })
+                );
+                // error.date = null;
+              }}
             />
             <span className="form-message"></span>
           </div>
@@ -140,26 +187,33 @@ function Form() {
               id="address"
               name="address"
               type="text"
-
-              //   value={user.address}
-              //   onChange={(e) => {
-              //     dispatch(
-              //       setUser({
-              //         ...user,
-              //         address: e.target.value,
-              //       })
-              //     );
-              //     error.address = null;
-              //   }}
+              value={user.address}
+              onChange={(e) => {
+                dispatch(
+                  setUser({
+                    ...user,
+                    address: e.target.value,
+                  })
+                );
+                // error.address = null;
+              }}
             />
             <span className="form-message"></span>
           </div>
 
           <div className="group-btn">
-            <button className="btn btn-active" type="submit">
+            <button
+              className={user.id ? "btn btn-inactive" : "btn btn-active"}
+              type="submit"
+            >
               Submit
             </button>
-            <button className="btn btn-inactive">Update</button>
+            <button
+              className={!user.id ? "btn btn-inactive" : "btn btn-active"}
+              onClick={handleSubmitEdit}
+            >
+              Update
+            </button>
           </div>
         </form>
       </div>

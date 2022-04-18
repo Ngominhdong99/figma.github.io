@@ -15,7 +15,7 @@ function Profile({ currentUser }) {
           <p id="full-name">Position: {currentUser.position}</p>
         </div>
         <p id="desc">
-          <h1>About</h1>
+          <p>About</p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa iste
           qui veritatis ut eaque quasi, sapiente deserunt? Optio perspiciatis ea
           sint quibusdam eos corporis exercitationem soluta? Commodi, corporis.
