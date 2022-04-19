@@ -10,45 +10,46 @@
     width: 20.5%;
     height: 100%;
     background: #fcfdfe;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1);
     border-radius: 0px 20px 20px 0px;
+    z-index: 1;
 
     .cover-letter {
       display: flex;
-      position: fixed;
       justify-content: center;
       align-items: center;
-      width: 4.2rem;
-      height: 69.21px;
-      left: 104px;
-      top: 50px;
-
-      background: #e8f0ff;
+      width: 23%;
+      height: 10%;
       background: #e8f0ff;
       border-radius: 50%;
+      margin-top: 15%;
 
       .first-letter {
-        position: fixed;
-        width: 36px;
-        height: 52px;
-        left: 121px;
-        top: 59px;
-        font-family: "DM Sans";
+        font-family: "Graphik";
         font-style: normal;
         font-weight: 700;
         font-size: 40px;
-        line-height: 52px;
-
         color: #015db2;
       }
     }
 
+    .log-out {
+      background-color: #015db2;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      width: 5rem;
+      height: 2rem;
+      border-radius: 5px;
+      margin: 40% 5% 0 0;
+
+      &:hover {
+        background-color: #004381;
+      }
+    }
+
     .user-info {
-      position: fixed;
-      width: 166px;
-      height: 18px;
-      left: 80px;
-      top: 134.21px;
+      margin-top: 10%;
       font-family: "Graphik";
       font-style: normal;
       font-weight: 400;
@@ -57,15 +58,35 @@
       color: #03182c;
       cursor: pointer;
       text-decoration: none;
+
+      &:hover {
+        color: #015db2;
+      }
+    }
+
+    .focus {
+      background: #015db2 !important;
+      border-radius: 10px;
+      border: none;
+      font-family: "Graphik";
+      font-style: normal;
+      cursor: pointer;
+      color: #fff !important;
+
+      .add-user {
+        color: #fff !important;
+      }
+
+      .about {
+        color: #fff !important;
+        text-decoration: none;
+      }
     }
 
     .home-page {
-      position: fixed;
-      width: 237px;
-      height: 50px;
-      left: 20px;
-      top: 223px;
-      background: #015db2;
+      transform: translateY(5rem);
+      padding: 0.9rem 4rem 0.9rem 4rem;
+      background: #fff;
       border-radius: 10px;
       border: none;
       font-family: "Graphik";
@@ -73,7 +94,7 @@
       font-weight: 600;
       font-size: 18px;
       line-height: 20px;
-      color: #fcfdfe;
+      color: #333;
       cursor: pointer;
 
       .category-icon {
@@ -85,45 +106,43 @@
       }
     }
 
-    .add-user {
-      position: fixed;
-      width: 156px;
-      height: 20px;
-      left: 84px;
-      top: 318px;
+    .btn-add {
+      padding: 0.9rem 4rem 0.9rem 4rem;
+      margin-top: 6rem;
       font-family: "Graphik";
       font-style: normal;
-      font-weight: 400;
+      font-weight: 600;
       font-size: 18px;
       line-height: 20px;
-      color: #03182c;
       cursor: pointer;
-      text-decoration: none;
+      border: none;
+      background-color: #fff;
+      .add-user {
+        color: #03182c;
+        text-decoration: none;
 
-      .add-icon {
-        margin-right: 5px;
-        font-size: 18px;
+        .add-icon {
+          margin-right: 5px;
+          font-size: 18px;
+        }
       }
     }
 
-    .about {
-      position: fixed;
-      width: 138px;
-      height: 20px;
-      left: 84px;
-      top: 399px;
+    .btn-about {
+      padding: 0.9rem 6rem 0.9rem 5rem;
+      margin-top: 1rem;
       text-decoration: none;
       font-family: "Graphik";
-      font-style: normal;
-      font-weight: 400;
+      font-weight: 600;
       font-size: 18px;
       line-height: 20px;
       cursor: pointer;
-      color: #03182c;
+      border: none;
+      background-color: #fff;
 
-      img {
-        margin-right: 5px;
-        height: 18px;
+      .about {
+        color: #03182c;
+        text-decoration: none;
       }
     }
   }
@@ -143,6 +162,14 @@
       background: #fcfdfe;
       box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
       border-radius: 20px;
+
+      .filter {
+        padding-left: 1%;
+
+        &:focus {
+          outline: none;
+        }
+      }
 
       .filter-left {
         flex-basis: 50%;
@@ -213,7 +240,7 @@
 
         .filter-date {
           position: absolute;
-          width: 227px;
+          width: 360px;
           height: 40px;
           left: 370px;
           top: 343px;
@@ -328,6 +355,9 @@
           line-height: 22px;
           color: #015db2;
           cursor: pointer;
+          &:hover {
+            background-color: #c8e5ff;
+          }
         }
 
         .search {
@@ -346,6 +376,10 @@
           line-height: 22px;
           color: #fcfdfe;
           cursor: pointer;
+
+          &:hover {
+            background-color: #004381;
+          }
         }
       }
     }

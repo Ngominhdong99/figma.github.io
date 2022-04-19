@@ -7,6 +7,7 @@ export const data = [
     password: "admin",
     fullName: "Ngô Minh Đông",
     role: "Admin",
+    email: "me@vmo.com",
     gender: "Male",
     age: 24,
     position: "Front-end dev",

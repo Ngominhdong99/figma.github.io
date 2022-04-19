@@ -54,13 +54,13 @@ const formReducer = (state = initState, action) => {
         users: [...updateUser],
       };
     case DELETE_USER:
-      const preUser = [...state.users];
-      const userAfterDelete = preUser.filter((user) => {
-        return user.id !== action.payload;
-      });
+      // const preUser = [...state.users];
+      // const userAfterDelete = state.users.filter((user) => {
+      //   return user.id !== action.payload;
+      // });
       return {
         ...state,
-        users: [...userAfterDelete],
+        users: [...state.users],
       };
   }
   return state;

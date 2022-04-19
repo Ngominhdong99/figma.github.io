@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import "./scss/Login.scss";
 import formLoginImg from "../images/Group.svg";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
@@ -17,10 +17,13 @@ function Login({ data, error, setError, handleSubmit, setInputData }) {
       setHidePass(!hidePass);
     }
   };
+  const inputRef = useRef();
+  useEffect(() => {
+    inputRef.current.focus();
+  }, [error]);
   const validator = Validate(inputValue);
   const onSubmit = (e) => {
     e.preventDefault();
-
     handleSubmit(inputValue);
     if (!Object.values(validator).some((item) => item)) {
       setInputValue({
@@ -44,6 +47,7 @@ function Login({ data, error, setError, handleSubmit, setInputData }) {
         </span>
 
         <input
+          ref={inputRef}
           className="userName"
           type="input"
           placeholder="ユーザーID"

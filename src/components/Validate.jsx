@@ -16,7 +16,7 @@ export default function Validate(users) {
       user.userName !== users.userName ||
       user.password !== users.userPassword
     ) {
-      error.notify = "ユーザー名かパスワードが間違っています!";
+      error.notify = "Username or Password incorrect!";
     }
   });
   return error;

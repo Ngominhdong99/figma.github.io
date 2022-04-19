@@ -41,13 +41,17 @@
       line-height: 18px;
       color: #bab6b6;
       padding: 20px;
+
+      &:focus {
+        outline: none;
+      }
     }
 
     .error-noti {
       position: absolute;
       left: 8%;
       right: 65.57%;
-      top: 31%;
+      top: 59%;
       bottom: 57.19%;
       color: rgb(255, 0, 0);
     }
@@ -79,6 +83,10 @@
       letter-spacing: -0.02em;
       color: #bab6b6;
       padding: 20px;
+
+      &:focus {
+        outline: none;
+      }
     }
 
     .error-password {

@@ -9,16 +9,18 @@ import {
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-function Form({ state, setIsHide }) {
+function Form({ state, setIsHide, setMenuFocus }) {
   const dispatch = useDispatch();
+  const { user } = state;
   const navigate = useNavigate();
-  const { user, users } = state;
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    navigate(`/home`);
+    setMenuFocus("home");
     dispatch(addUser(user));
     dispatch(getUsers());
-    setIsHide(true);
+    setIsHide(false);
     dispatch(
       setUser({
         id: null,
@@ -33,6 +35,9 @@ function Form({ state, setIsHide }) {
   };
   const handleSubmitEdit = (e) => {
     e.preventDefault();
+    navigate(`/home`);
+    setIsHide(false);
+    setMenuFocus("home");
 
     dispatch(updateUser(user));
     dispatch(getUsers());
@@ -60,6 +65,7 @@ function Form({ state, setIsHide }) {
               Name<label>*</label>
             </label>
             <input
+              required
               className="form-control"
               id="fullname"
               name="fullname"
@@ -112,6 +118,7 @@ function Form({ state, setIsHide }) {
               Email<label>*</label>
             </label>
             <input
+              required
               className="form-control"
               id="email"
               name="email"
@@ -136,6 +143,7 @@ function Form({ state, setIsHide }) {
               Phone Number<label>*</label>
             </label>
             <input
+              required
               className="form-control"
               id="phone-number"
               name="phone-number"
@@ -160,6 +168,7 @@ function Form({ state, setIsHide }) {
               Date of Birth
             </label>
             <input
+              required
               id="date"
               name="date"
               type="date"
