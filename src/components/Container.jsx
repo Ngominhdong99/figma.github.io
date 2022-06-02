@@ -10,6 +10,8 @@ import { getUsers } from "../store/actions/action";
 import Profile from "./nav-components/Profile";
 import Form from "./nav-components/Form";
 import Required from "./nav-components/Required";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 function Container() {
   const [error, setError] = React.useState([]);
@@ -21,7 +23,7 @@ function Container() {
   const [isHide, setIsHide] = React.useState();
   const [currentPage, setCurrentPage] = React.useState(1);
   const [userPerPage] = React.useState(4);
-  const [menuFocus, setMenuFocus] = React.useState();
+  const [menuFocus, setMenuFocus] = React.useState("home");
 
   const state = useSelector((state) => state.form);
 
@@ -44,6 +46,7 @@ function Container() {
       return user;
     });
   };
+
   return (
     <>
       <Routes>

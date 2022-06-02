@@ -253,6 +253,7 @@ function Home({
             setCurrentPage={setCurrentPage}
             searchUsers={searchUsers}
             setMenuFocus={setMenuFocus}
+            currentUser={currentUser}
           />
         ) : null}
       </div>
